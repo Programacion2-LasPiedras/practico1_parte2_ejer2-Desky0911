@@ -1,39 +1,27 @@
 import java.util.Scanner;
-
+import java.util.Random;
 public class Programa {
 	
 	void iniciar(){
 		
-		int valor=generarAleatorio();
-		int num;
-		int resul;
-		
-		do{
-			num=pedirNumero();
-			resul=compararNumeros(num, valor);
-			System.out.println(resul);
-			
-		}while(resul!=0);
-		System.out.println("Felicitaciones acertaste!!");
-	}
+	Scanner entrada = new Scanner(System.in);
+	Random azar = new Random();
+	int usuario;
+	int numero = azar.nextInt(99)+1;
 	
-	//devuelve un numero aleatorio entre 1 y 100
-	int generarAleatorio(){
-		//completar aquí
-	}
-	
-	//pide un nro por pantalla
-	 int pedirNumero(){
-		 Scanner entrada=new Scanner(System.in);
-		 
-		////completar aquí
-		 
-	 }
-	
-	 //compara dos enteros a y b. Devuelve un String indicando si es menor, mayor o igual
-	 int compararNumeros(int a, int b){
-		 //completar aquí
-	 }
+		System.out.println("ingrese un numero del 1 al 100");
+			usuario = entrada.nextInt();	
+			do {
+					if (usuario < numero) {
+						System.out.println("Demacido Chico \n Ingrese otro");
+						usuario = entrada.nextInt();
+					}
+					else if (usuario > numero) {
+						System.out.println("Demaciado Grande \n Ingrese otro");
+						usuario = entrada.nextInt();
+					}
+				} while (numero != usuario);
+	System.out.println("Felicitaciones, acertó el número " + numero);
 	
 }
 
